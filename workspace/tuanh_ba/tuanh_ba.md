@@ -172,6 +172,76 @@ Một sai lầm phổ biến khi giải case này là chỉ xử lý **triệu c
 Đề bài quy định rõ: *"Tính sáng tạo được đánh giá dựa trên mức độ phù hợp, hiệu quả và khả năng giải quyết tận gốc vấn đề, chứ không dựa trên công nghệ được sử dụng."*
 
 Sự sáng tạo của **SmartPack** nằm ở **3 bước chuyển tư duy thiết kế dịch vụ (Service Design Shifts)**:
-1. **Dùng thiết kế cấu trúc thay cho công nghệ đắt đỏ rủi ro cao:** Thay vì cố dùng AI phân loại đống file hỗn độn sau khi đã tải lên (vướng 41% ảnh chụp kém chất lượng và rào cản phê duyệt trong 8 tuần), SmartPack dùng **Slot-Based Upload + Client-side Check** để file vừa sạch vừa tự phân loại ngay từ lúc chụp.
+1. **Không dùng thiết kế cấu trúc thay cho công nghệ đắt đỏ rủi ro cao:** Thay vì cố dùng AI phân loại đống file hỗn độn sau khi đã tải lên (vướng 41% ảnh chụp kém chất lượng và rào cản phê duyệt trong 8 tuần), SmartPack dùng **Slot-Based Upload + Client-side Check** để file vừa sạch vừa tự phân loại ngay từ lúc chụp.
 2. **Biến hệ thống nội bộ sẵn có thành lợi thế trải nghiệm:** Tận dụng chính ma trận quy tắc nội bộ, kho lưu trữ tài liệu cũ (cho SME quay lại) và transactional email sẵn có để tạo ra trải nghiệm "thông minh" mà vẫn khả thi 100% với **2 Developer và 0.5 QA trong 4 Sprints**.
 3. **Kết hợp hài hòa Tự phục vụ số (Digital Self-Service) với Điểm chạm con người (Human-in-the-Loop):** Tự động hóa các kiểm tra chuẩn hóa nhưng vẫn thiết kế lối thoát *"Nhờ RM hỗ trợ kèm ngữ cảnh"* cho các hồ sơ SME phức tạp — đúng bản chất ngành tín dụng doanh nghiệp tại Việt Nam.
+
+---
+
+# PHẦN C: CẬP NHẬT CHIA VIỆC 3 NGƯỜI (TRIỆU - TÚ ANH - KHẢI) & PROMPT VIẾT NỐT PART 3.A, 3.B CHO TÚ ANH
+
+> **CẬP NHẬT KHẨN (BỎ QUA ĐĂNG - CHIA GỌN 3 NGƯỜI):**
+> Do máy của Đăng đang gặp lỗi kỹ thuật, toàn bộ bài làm của team đã được khóa thống nhất theo giải pháp **SmartPack ("Đủ Ngay Lần Đầu")** của Tú Anh và Đăng.
+> - **Triệu (PM/PO):** Phụ trách **Part 1** & **Part 4.1** (Đã có sẵn prompt & bản nháp trong `workspace/trieu_pm_po.md`).
+> - **Khải (QA/Tester):** Phụ trách **Part 3.A (Acceptance Criterion cho PBI #1)**, **Part 3.C (DoD)**, **Part 3.D (Risks & Defer)** và **Part 4.2 (2 KPIs & Pre-Pilot Release Condition)** (Đã có sẵn prompt & bản nháp trong `workspace/khai_qa_tester.md`).
+> - **Tú Anh (BA):** Đã hoàn thành cực kỳ xuất sắc **Part 2** ở trên! Tú Anh chỉ cần phụ trách thêm **Part 3.A (Bảng 4 Prioritized PBIs)** và **Part 3.B (Bảng Kế hoạch Incremental Delivery 4 Sprints)** để nối thẳng từ 4 cấu phần của **SmartPack** sang lộ trình Scrum.
+
+---
+
+## 📋 I. PROMPT COPY-PASTE CHO TÚ ANH (DÁN VÀO AI ĐỂ XUẤT BẢNG PART 3.A & 3.B CHUẨN 100%)
+
+```text
+Đóng vai một Senior Business Analyst và Scrum Master. Dựa trực tiếp trên giải pháp "SmartPack (Đủ Ngay Lần Đầu)" ở Part 2, hãy viết hoàn chỉnh, súc tích 2 mục sau đây của PART 3: SCRUM-BASED MVP PLANNING & EXECUTION (để ghép vào báo cáo Word tối đa 6 trang A4):
+1) PART 3 - MỤC 3.A: Bảng 4 Prioritized Product Backlog Items (PBIs) gồm Mô tả ngắn gọn (Capability/Work), Giá trị mang lại (Customer & Business Value) và Độ ưu tiên tương đối (Relative Priority 1 -> 4).
+2) PART 3 - MỤC 3.B: Bảng kế hoạch Incremental Delivery qua 4 Sprints (8 tuần, mỗi Sprint 2 tuần).
+
+YÊU CẦU BẮT BUỘC:
+- Trả lời bằng tiếng Việt súc tích, trình bày bằng 2 bảng biểu gọn gàng (Compact Tables). Không dùng từ ngữ quảng cáo sáo rỗng.
+- Giữ nguyên tiếng Anh cho các thuật ngữ chuẩn Scrum: Product Goal, Sprint Goal, Product Backlog, PBI, Increment, Definition of Done, Acceptance Criteria, MVP, Product Owner, Sprint Review, Controlled Pilot.
+- Trích dẫn inline chuẩn xác: (Exhibit A), (Exhibit B), (Exhibit C), (Exhibit D), (Section 5), (Section 6), (Section 7).
+- Khớp 100% với 4 cấu phần của giải pháp SmartPack:
+  + PBI #1 (Priority 1 - Highest): Dynamic Eligibility-to-Document Wizard (Bộ lọc 4 câu hỏi sinh Checklist cá nhân hóa từ bảng quy định nội bộ + đánh dấu tái sử dụng giấy tờ pháp lý cố định đã lưu cho SME vay lại - giải quyết 75% lỗi ở 800 SME lần đầu và 45% lỗi ở 400 SME quay lại - Exhibit B, Section 5).
+  + PBI #2 (Priority 2): Slot-Based Upload & Soft-Completeness Gate (Giao diện tải file theo từng khe tài liệu bắt buộc giúp tự động gắn nhãn danh mục vào Document storage mà không cần AI + Thanh tiến độ lưu nháp + Cổng chặn nộp mềm có tùy chọn ngoại lệ "Chưa có / Cần RM hỗ trợ" - tấn công trực diện 65% hồ sơ thiếu/sai loại - Exhibit A, Section 5).
+  + PBI #3 (Priority 3): On-Device Mobile Quality Pre-Check & Visual Guide (Ảnh mẫu Đúng/Sai ngay tại từng khe + Kiểm tra độ mờ/độ phân giải cục bộ client-side và bước khách xác nhận "Chữ đọc rõ" cho 78% đơn khởi tạo trên Mobile và 41% tài liệu ảnh chụp/scan - Exhibit A, Exhibit D).
+  + PBI #4 (Priority 4): Structured Ops Review & One-Click Surgical Fix-Loop (Màn hình nhân viên duyệt theo khe và chọn Mã lý do lỗi chuẩn hóa -> kích hoạt 1 Transactional Email duy nhất kèm Deep-link yêu cầu đăng nhập mở thẳng đúng khe lỗi để SME nộp bù; giúp giảm thời gian xử lý mỗi ca follow-up từ 10 phút xuống <= 5-6 phút - Exhibit A, Section 5).
+  (Ghi chú linh hoạt theo tinh thần Scrum: Sau khi BA và Credit Ops dùng 2 giờ/tuần ở Sprint 1 phân loại 50 ca bổ sung gần nhất, Product Owner có thể đảo thứ tự ưu tiên giữa PBI #3 và PBI #4 tùy thuộc vào tỷ trọng lỗi ảnh mờ so với nhu cầu tối ưu luồng trả hồ sơ).
+
+- Yêu cầu riêng cho Bảng 3.B (Incremental Delivery - 4 Sprints):
+  + Tuân thủ đúng quy chuẩn Scrum của đề bài: Phát biểu rõ 1 "Sprint Goal" cam kết cho Sprint 1 và các "Forecast Objectives" cho Sprints 2, 3, 4 (nhấn mạnh rằng các forecast này sẽ được tinh chỉnh qua từng Sprint Review khi team học được thêm bằng chứng thực tế, không khóa cứng Sprint Backlog 8 tuần từ đầu).
+  + Nêu rõ Usable Increment đạt Definition of Done được demo tại mỗi Sprint Review.
+  + Phân bổ hợp lý và khả thi theo đúng Team Capacity cố định tại Section 6: 1 Product Owner (FT), 1 Scrum Master (FT), 2 Software Developers (FT), 1 Business Analyst (FT), 1 QA Engineer làm 50% thời gian (~5 ngày làm việc/Sprint), và nhân sự Bank Operations (RM & Credit Ops) hỗ trợ tối đa tổng cộng 2 giờ/tuần.
+  + Lộ trình 4 Sprints phải phản ánh đúng mạch diễn biến của Section 7:
+    * Sprint 1 (W1-2): Khoanh vùng Pilot cho 1–2 sản phẩm vay SME phổ biến nhất; BA + Credit Ops (2h/tuần) rà soát 50 ca lỗi mẫu & xác nhận bảng rule; 2 Dev + QA (5 ngày) hoàn thành Usable Increment 1 (PBI #1: Dynamic Wizard + Returning SME File Reuse Indicator).
+    * Sprint 2 (W3-4): 2 Dev + QA (5 ngày) hoàn thành Usable Increment 2 (PBI #2: Slot-Based Upload & Soft-Completeness Gate kết nối Document storage); cuối Sprint dùng khung 2h/tuần của Ops chạy phiên đánh giá usability với 8 người dùng mục tiêu và demo tại Sprint Review (nơi phát sinh 2 tình huống của Section 7).
+    * Sprint 3 (W5-6): Thích nghi sau Sprint 2 Review — 2 Dev & BA dành đầu Sprint cải thiện điều hướng UX 1 hành động chính/màn hình (Single Primary CTA & Next-Action Banner) để xử lý vấn đề của 5/8 người dùng (Section 7), đồng thời hoàn thành Usable Increment 3 (PBI #3: On-Device Mobile Quality Pre-Check & Visual Guide); QA test tương thích Mobile và re-test usability cùng Ops (2h/tuần).
+    * Sprint 4 (W7-8): Hoàn thành Usable Increment 4 (PBI #4: Structured Ops Review & One-Click Surgical Fix-Loop qua Transactional Email); dành nửa sau Sprint thực hiện bắt buộc Security Review và Critical Functionality Testing (Section 6) để sẵn sàng khởi chạy Controlled Pilot.
+```
+
+---
+
+## ✍️ II. BẢN NHÁP ĐÃ ĐIỀN SẴN PART 3.A & 3.B CHO TÚ ANH (DÙNG NGAY ĐỂ GHÉP BÀI)
+
+### PART 3.A: PRODUCT BACKLOG (4 PRIORITIZED ITEMS)
+
+| Priority | Product Backlog Item (PBI) | Mô tả năng lực / Công việc (Capability Description) | Giá trị mang lại cho Khách hàng & Ngân hàng (Customer & Business Value) |
+| :---: | :--- | :--- | :--- |
+| **1**<br>*(Highest)* | **Dynamic Eligibility-to-Document Wizard** | Bộ hỏi đáp 4 câu hỏi ngắn trên Portal/Mobile ánh xạ ma trận quy định nội bộ (`Section 5`) thành **Checklist cá nhân hóa**; tự động đánh dấu các giấy tờ pháp lý cố định đã lưu từ lần vay trước cho khách hàng quay lại. | Xóa bỏ sự mơ hồ về thủ tục đầu vào cho **800 SME vay lần đầu (75% lỗi)** và giảm thao tác thừa cho **400 SME vay lại (45% lỗi)** (`Exhibit B`); tạo cấu trúc dữ liệu gốc cho toàn bộ các bước tải file phía sau. |
+| **2** | **Slot-Based Upload & Soft-Completeness Gate** | Giao diện tải file theo từng khe tài liệu (Slot) riêng biệt (tự động gắn nhãn danh mục vào *Document storage* – `Section 5`), kèm thanh tiến độ lưu nháp và cổng chặn nộp thiếu (có lối thoát *"Chưa có / Cần RM hỗ trợ"* kèm ghi chú lý do). | Chặn trực diện nguyên nhân gây ra **65% hồ sơ nộp thiếu (780 đơn/tháng – `Exhibit A`)** và triệt tiêu 100% lỗi gắn sai danh mục tài liệu ngay tại nguồn mà không cần phụ thuộc vào mô hình AI phân loại. |
+| **3** | **On-Device Mobile Quality Pre-Check & Visual Guide** | Tích hợp ảnh mẫu *"Đúng vs. Sai"* ngay tại từng khe tài liệu kèm bộ kiểm tra nhẹ trên trình duyệt thiết bị (kiểm tra định dạng PDF/JPG/PNG $\le 10\text{MB}$, độ phân giải tối thiểu, độ mờ/sáng) và bước khách xác nhận *"Chữ đọc rõ"*. | Tối ưu trực tiếp cho **78% hồ sơ khởi tạo trên Mobile** (`Exhibit A`) và kiểm soát chất lượng **41% tài liệu là ảnh chụp/bản scan** (`Exhibit D`) mà dữ liệu không hề rời khỏi môi trường bảo mật của Bank X (`Section 6`). |
+| **4** | **Structured Ops Review & One-Click Surgical Fix-Loop** | Màn hình hỗ trợ nhân viên duyệt hồ sơ theo từng khe và tick chọn **Mã lý do lỗi chuẩn hóa** để kích hoạt **1 Transactional Email duy nhất** (`Section 5`) chứa *Deep-link* mở thẳng vào đúng khe cần nộp lại; nhân viên chỉ cần kiểm tra lại đúng mục đã sửa. | Cắt giảm mạnh thời gian nhân viên xử lý mỗi ca bổ sung (hiện tốn **10 phút/ca = 130 giờ/tháng** – `Exhibit A`) và giúp **32% khách hàng mất $>1$ ngày sửa lỗi** (`Exhibit A`) hoàn tất nộp bù chỉ trong vài phút, đồng thời nhận xác nhận trạng thái rõ ràng. |
+
+> *(Ghi chú quản trị Product Backlog theo Scrum: Sau khi BA và Credit Ops dùng khung 2 giờ/tuần ở Sprint 1 phân loại nguyên nhân của 50 hồ sơ phải bổ sung gần nhất, **Product Owner** có thể linh hoạt đảo thứ tự giữa **PBI #3** và **PBI #4** dựa trên tỷ trọng thực tế giữa lỗi ảnh mờ và nhu cầu tối ưu luồng trả hồ sơ).*
+
+---
+
+### PART 3.B: INCREMENTAL DELIVERY PLAN (4 TWO-WEEK SPRINTS / 8 WEEKS)
+
+Scrum Team không khóa cứng Sprint Backlog cho cả 8 tuần từ ngày đầu. Chỉ có **Sprint Goal** của Sprint 1 được cam kết ngay tại buổi Sprint Planning đầu tiên; mục tiêu của các Sprints 2–4 là **Forecast Objectives** và được tinh chỉnh qua từng buổi **Sprint Review**:
+
+| Sprint | Sprint Goal (S1) & Forecast Objectives (S2–S4) | Usable Increment Demonstrated at Sprint Review | Quản trị Capacity (2 Dev, 1 BA, 0.5 QA ~ 5 ngày/Sprint, Ops $\le$ 2h/tuần) & Phụ thuộc (`Section 6`) |
+| :--- | :--- | :--- | :--- |
+| **Sprint 1**<br>*(Weeks 1–2)* | **Sprint Goal (Committed):** Chuẩn hóa ma trận quy tắc hồ sơ cho 1–2 sản phẩm vay SME trọng điểm của đợt Pilot và chuyển giao bộ lọc sinh Checklist cá nhân hóa (**PBI #1**) hoạt động hoàn chỉnh trên Portal/Mobile. | **Increment 1:** SME đăng nhập trên môi trường Staging, trả lời 4 câu hỏi trên Mobile/Web và nhận đúng 100% danh mục giấy tờ bắt buộc (kèm chỉ báo giấy tờ cũ đã lưu cho SME vay lại), lưu được vào *Draft* (`Section 5`). | • **BA & PO:** Soạn sẵn bảng rule từ tài liệu nội bộ để chỉ dùng **2 giờ/tuần** của Bank Ops cho việc phân loại 50 ca lỗi mẫu & sign-off quy tắc.<br>• **2 Dev:** Xây dựng deterministic rule engine & giao diện Wizard.<br>• **QA (5 ngày):** Kiểm thử 100% tổ hợp nhánh quy tắc của gói vay Pilot. |
+| **Sprint 2**<br>*(Weeks 3–4)* | **Forecast Objective:** Hoàn thiện giao diện tải file theo từng khe tài liệu và cổng chặn nộp mềm (**PBI #2**) kết nối trực tiếp với *Document storage* bảo mật hiện có. | **Increment 2 (PBI #1 + #2):** SME xem Checklist, tải file (PDF/JPG/PNG $\le 10\text{MB}$) vào từng khe riêng biệt (hệ thống tự động gắn nhãn danh mục), xem thanh tiến độ và bị chặn nộp nếu bỏ trống khe bắt buộc mà không khai báo lý do ngoại lệ. | • **2 Dev:** Phát triển Slot-Based Upload UI, tích hợp *Document storage* & nâng cấp *Basic validation* (`Section 5`).<br>• **BA & Ops (2h/tuần):** Tổ chức phiên đánh giá usability với **8 người dùng mục tiêu** trước buổi **Sprint Review** (`Section 7`).<br>• **QA (5 ngày):** Test luồng tải file theo khe, phân quyền lưu trữ & trạng thái lưu nháp. |
+| **Sprint 3**<br>*(Weeks 5–6)* | **Forecast Objective:** Thích nghi giao diện điều hướng từ phản hồi tại Sprint 2 Review (`Section 7`) và tích hợp hướng dẫn ảnh mẫu kèm kiểm tra chất lượng ảnh chụp cục bộ trên Mobile (**PBI #3**). | **Increment 3 (PBI #1–#3 + UX Adaptation):** Mỗi màn hình chỉ có 1 nút hành động chính (*Single Primary CTA*) và thanh chỉ dẫn *"Bước tiếp theo của bạn"*; khi SME tải ảnh chụp trên Mobile, hệ thống kiểm tra độ phân giải/độ mờ cục bộ và hiển thị cảnh báo kèm ảnh mẫu Đúng/Sai. | • **PO & BA:** Điều chỉnh Product Backlog sau Sprint 2 Review (`Section 7`); thiết kế lại micro-copy điều hướng.<br>• **2 Dev:** Sửa UX chuyển bước trong 2–3 ngày đầu + lập trình bộ lọc ảnh client-side JavaScript (**PBI #3**).<br>• **QA (5 ngày) & Ops (2h/tuần):** Kiểm thử tương thích trên các thiết bị Mobile phổ biến (78% traffic) và re-test usability với người dùng. |
+| **Sprint 4**<br>*(Weeks 7–8)* | **Forecast Objective:** Hoàn thiện luồng duyệt theo khe và yêu cầu bổ sung 1 chạm qua email (**PBI #4**), đồng thời hoàn tất **Security Review & Critical Functionality Testing** để sẵn sàng mở **Controlled Pilot**. | **Increment 4 (Full MVP):** Luồng End-to-End hoàn chỉnh từ lúc SME nộp bộ hồ sơ chuẩn hóa đến khi Credit Ops chọn mã lý do lỗi tại khe tài liệu, kích hoạt *Transactional email* kèm *Deep-link* để khách nộp bù 1 chạm và nhận biên nhận điện tử. | • **2 Dev:** Lập trình PBI #4 kết nối *Transactional emails* (`Section 5`); đóng băng tính năng (feature freeze) từ giữa Sprint 4.<br>• **QA (5 ngày), Dev & Security:** Thực hiện bắt buộc **Security Review** và **Critical Functionality Testing** (`Section 6`); dùng **2 giờ/tuần** của Ops để nghiệm thu vận hành trước **Controlled Pilot**. |
+
