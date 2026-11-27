@@ -21,3 +21,16 @@ venv/
 node_modules/
 dist/
 build/
+.agents/
+.gemini/
+.cursor/
+.claude/
+.windsurf/
+.github/copilot*
+.aider*
+*.CursorRules
+.cursorrules
+.clinerules
+CLAUDE.md
+AGENTS.md
+GEMINI.md
